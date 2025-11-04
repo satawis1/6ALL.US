@@ -70,13 +70,30 @@
     }
 
     .product-info {
-      padding: 15px;
+      padding: 10px;
       text-align: center;
     }
 
     .product-info h3 {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .price {
+      margin: 8px 0;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #888;
+      margin-right: 8px;
+      font-size: 0.9em;
+    }
+
+    .new-price {
+      color: #ff0040;
+      font-weight: bold;
       font-size: 1.1em;
-      margin: 10px 0;
     }
 
     .product-info button {
@@ -137,197 +154,194 @@
 <script>
   // All your products
   const products = [
-    {img:"https://i.postimg.cc/7Yr0pZNh/S16f93c1c06ef4afe9f3ae1a4413710b9U.jpg", title:"Low waist mini skirt"},
-    {img:"https://i.postimg.cc/mrfv9M3r/Sd1fd19b508b94aae81378b2ab770083ak.webp", title:"Y2k Mini Shorts"},
-    {img:"https://i.postimg.cc/k4MWY1FJ/Sc11d75f7865943a1a4de70448c71fe27R.webp", title:"Long Sleeved Top"},
-    {img:"https://i.postimg.cc/nLF2jYSC/S4400824974f647fbb78c1b4ce4c1cfd3a.webp", title:"Y2k Jeans High Wais"},
-    {img:"https://i.postimg.cc/fLjM2sjF/S0d40ccfb752348f8803813489eef347c-U.webp", title:"Street Baggy Jeans"},
-    {img:"https://i.postimg.cc/nVsmPDbR/S089735501c144d3186349b3a1ec97cfd-D-d1e4e9be-915e-4e9a-bb29-33eb23befe84.webp", title:"Y2K Bootcut Jeans"},
-{img:"https://i.postimg.cc/HWwfy3BB/S35f1a0c543fa456faebe3bc56b535d82L.webp", title:"Baggy Jeans Wide Leg"},
-{img:"https://i.postimg.cc/1tcJf7sn/S3d42585f01bd4a65bb66c778dbba2ad8Y-e893242e-1194-409c-8d6e-f199f6539a93.webp", title:"Loose Jeans"},
-    {img:"https://i.postimg.cc/QM929mK4/Sf5c187815fbc4c5bb85c7c8963d587cem.webp", title:"Hello Kitty Top"},
-    {img:"https://i.postimg.cc/JhkF4hSS/S547078c23a934d9ea18e990a29d53489r.webp", title:"Mouth T-shirt"},
-    {img:"https://i.postimg.cc/ZnKj3YD4/S8e2ddddb3c154fd88bd79df214017e834.jpg", title:"Y2K Striped Blouse"},
-    {img:"https://i.postimg.cc/nLF2jYSC/S4400824974f647fbb78c1b4ce4c1cfd3a.webp", title:"Y2k Jeans High Wais"},
-    {img:"https://i.postimg.cc/fLjM2sjF/S0d40ccfb752348f8803813489eef347c-U.webp", title:"Street Baggy Jeans"},
-
-
-{img:"https://i.postimg.cc/nrXj6MRL/Sf89fbf1eba71405dba3c9d504c6b7e3dv.jpg", title:"Black Printed Shirt"},
-{img:"https://i.postimg.cc/9f86zSfG/S43ae8cf7bc9b42b993a6d7b8ec2d42163.webp", title:"Vintage Crop Top"},
-{img:"https://i.postimg.cc/nrWV7k1f/S6fc63414df824995b3a2f9c9207e20b00.jpg", title:"Military Jeans"},
-{img:"https://i.postimg.cc/vHdGRcSV/S186058a8506b4700b55204850a1929a3L.webp", title:"Tube Tank Top"},
-
-    {img:"https://i.postimg.cc/NfMzVbfB/S7a3b51317c57451d909efb55a8b1135e-L.webp", title:"Y2K Long Sleeve Shirt"},
-    {img:"https://i.postimg.cc/3x659VXM/Scf1ee60e742e484fa3b7d19825803c38t.webp", title:"Flare Jeans"},
-    {img:"https://i.postimg.cc/HLYf3mNv/S88969b945b2a4d37976dc4b5a7c849b3b.webp", title:"White Denim Shorts"},
-    
-    {img:"https://i.postimg.cc/tgMc9xSH/Sb9a499f99e834d78b3c2bb41e4baf83ag.webp", title:"British Shorts"},
-    {img:"https://i.postimg.cc/y8rjRzFB/S7bedff514d1e4491b8e879d80ee435e2v.webp", title:"Low Waist Cargo"},
-    {img:"https://i.postimg.cc/CKGZgGMr/Se893cb4b943944f58ff4c8a1bb9c3f9cb.jpg", title:"Women Mini Skirt"},
-    {img:"https://i.postimg.cc/k4Vg5W74/S205f452834724548b22385b7416023a54.webp", title:"Blue Jeans"},
-
-
-{img:"https://i.postimg.cc/LXCvtYYc/S5872f28c913a40c7b28cca71b636e35eq.webp", title:"Cargo Pants"},
-{img:"https://i.postimg.cc/fRNFTdxC/Sac9f27d8b1b847aeac8e8baf614e0bc1g.jpg", title:"Militar Hoodie"},
-{img:"https://i.postimg.cc/DwnjKTTD/S5def22c0d95d451083361d8c94222b1bs.webp", title:"Women's Print Jeans"},
-{img:"https://i.postimg.cc/h4V145pv/S707ee15bd5994dfe9d3d4bf7a450b721J.jpg", title:"07 Casual Set"},
-{img:"https://i.postimg.cc/Dw0GGjdL/S804c5d3e9c4a42dc86ae4295b43a3ab0Q.webp", title:"Demon Jeans"},
-{img:"https://i.postimg.cc/pTHysq8n/Se3e771bd656d4c20931cd997ed5ed135m-5afbef7b-91cb-49bb-a3a0-910cb61caeef.jpg", title:"Skeleton T Shirt"},
-{img:"https://i.postimg.cc/DyHvCx3Z/Sad89db6298144cc58bf12cd753071cff-H.webp", title:"2000s Tshirts"},
-{img:"https://i.postimg.cc/528Vs1mk/Se3ce67a5fa9a47879d0dfce5653a4a47f.webp", title:"T-shirt Y2k Short Sleeve"},
-{img:"https://i.postimg.cc/c6qz3g2V/S15f9921da2344eec955935498eb33365n.webp", title:"Black Lace Top"},
-{img:"https://i.postimg.cc/k429FSYK/Sc2a2425ab80e4308b5051d57403a0a8f8.webp", title:"Tupac Shirt"},
-{img:"https://i.postimg.cc/QCLLQyTh/Se8d085099bf94488af1221d6c043edb2C.jpg", title:"New Baggy Wide Leg Jeans Men"},
-{img:"https://i.postimg.cc/m2wqkDV6/Sc444dcac7dc7402db71e564fa8978d6f-F.webp", title:"Long Sleeves Top"},
-{img:"https://i.postimg.cc/t4JrgzsV/Sddc4ec8b022a47ad8bcf64a65fc09329s.webp", title:"Spider Hoodie"},
-{img:"https://i.postimg.cc/Zq3x9s45/Sc4b8f0febdf34a938c454f6a85b4c3b3K.webp", title:"Y2K Women Basic Crop Top"},
-{img:"https://i.postimg.cc/fybdv8nG/S002edc23e05f434ea1e2baebf612759bn.webp", title:"Baggy Jeans Striped"},
-{img:"https://i.postimg.cc/hGq7YDRQ/S06d832d18e644c598379407123d2d11em.webp", title:"2000s Zip Up Top"},
-{img:"https://i.postimg.cc/htVXTkQB/S1a423f7fbd3c44568b979ffe376d28694.webp", title:"Casual Set"},
-{img:"https://i.postimg.cc/1Xgtt2Zs/S020054ae77154b3b96b6e5234df1bea0H.jpg", title:"Y2K Star Rivet Belts"},
-{img:"https://i.postimg.cc/zGM1DvGT/S116224ab906740cb9014d2b6a32a4948Q.jpg", title:"Black Printed T-shirt"},
-{img:"https://i.postimg.cc/W4kcdVdf/S25cb081b432540af947267bf73216439v.webp", title:"Belt Double Hole"},
-{img:"https://i.postimg.cc/qRcfGGX0/Sc1a8ce7b2a7444e7adf9c0bcf5b2c18b-E-d8df14ed-806d-415a-bdda-3c7831b9f232.webp", title:"Low-Waisted Flare Pants"},
-{img:"https://i.postimg.cc/63VshhL0/Sf90dbb4396284d7688af6d532dc24688i.webp", title:"Hello Kitty hoodie"},
-{img:"https://i.postimg.cc/4xrNLBtw/S6cc21fb5f2c5446e9b379150c8971f5a-K.jpg", title:"Trousers High Waist"},
-{img:"https://i.postimg.cc/yNc6wcyY/Sefbc8518e9964f4c81e09a72dc700e5fu.jpg", title:"Flared Jeans"},
-{img:"https://i.postimg.cc/B63ZsbmN/S24271256fdba449e9298ffa48e10b1ac8.webp", title:"T-shirt Oversized"},
-{img:"https://i.postimg.cc/zvXJbMZ5/S15c23d7add014454afaf0365b0b1b163Y.webp", title:"Print Baggy Jeans"},
-{img:"https://i.postimg.cc/5y7fw3bv/S7ca0fcc654814604be48de0733ba6a35i-03bb9a89-a466-4993-84f3-66e1498d107b.webp", title:"Floral Jeans"},
-{img:"https://i.postimg.cc/gcNcFY8j/S2600e732e0bc41ce8cbb4edfc17a1f71l.webp", title:"2000s Low Rise Shorts"},
-{img:"https://i.postimg.cc/k53qFD3j/S047573ada5264aa2bc2ff682366a82d1u.webp", title:"Spider Oversized Hoodie"},
-{img:"https://i.postimg.cc/HxTmRKLc/S9aabac8971e4480aa53bef8dbc7f94a8p.webp", title:"Sweatpants Camouflage"},
-{img:"https://i.postimg.cc/vBXysz1S/Sbd6f5eb3cacf47f6b25455bb25cab373d.webp", title:"Long Sleeves Crop Tope"},
-{img:"https://i.postimg.cc/8c5SP6MJ/Sf2b5f05caf334478af6af63db62da9b2r.jpg", title:"Floreale Jeans"},
-{img:"https://i.postimg.cc/vmg6q0Bx/S5eea20415c9a44218c35624621903b05h.webp", title:"Women's Black Jeans"},
-{img:"https://i.postimg.cc/q7P692hW/Sce0196ff8a794d158b8070c7567f3d315.webp", title:"Hello Kitty Belt"},
-{img:"https://i.postimg.cc/1RcVjn9F/Sa031e5a2ea444e3eaa0b888075db51dcn.webp", title:"Knitting Cap"},
-{img:"https://i.postimg.cc/W1tDz50w/S8fe0b4b266cc4c138077bd88f88fca9dh.webp", title:"2000s Top"},
-{img:"https://i.postimg.cc/13T8qDHs/S3690e1095a274c779c02b26fe6c324db-N.webp", title:"Plus Size Hoodie"},
-{img:"https://i.postimg.cc/DzX8dmjs/S0b92c58bb17f4121bbd4b0c2c900e328Q.webp", title:"Cross Top"},
-{img:"https://i.postimg.cc/SsbjZq3W/Scb395f78ef78472f8f2deef330a3a21b-D.webp", title:"Zircon Cross Pendant Necklace"},
-{img:"https://i.postimg.cc/4dvyqqTx/Sa694c4f1efaa49bb9646d9c13b708ef03.jpg", title:"Leopard Tube Top"},
-{img:"https://i.postimg.cc/90W0hbWG/Se1d87eb259504ece877f9839c85beaa0z-06d6d1bd-656f-4b70-904a-1e6e66296f05.webp", title:"2000s Vintage Jeans"},
-{img:"https://i.postimg.cc/T29hcz9H/Sf3d5ba83b1ea4b32ad0a964dcbcce7c3V.jpg", title:"Printed T-shirts"},
-{img:"https://i.postimg.cc/4xKdsmT5/Se5e47ec6082240f1bf32b794c6e92aedh.webp", title:"Y2K Top"},
-{img:"https://i.postimg.cc/L8qX2npR/S01d892b5241d4966b0514c954eba636b-R.jpg", title:"O-neck Long Sleeve Top"},
-{img:"https://i.postimg.cc/JhZzHv0j/S17c69da9605e4ace89f67fc94d5704efp.webp", title:"Red Lava Star Necklace"},
-{img:"https://i.postimg.cc/mDSZ89Q2/S0ef1811f0351448cb5071cef0b5a7877V.webp", title:"Print Jeans"},
-{img:"https://i.postimg.cc/SRNS5KrP/S0fbc929681ec4504ad79cce9bc3e7130g.webp", title:"Y2k Off shoulder Top"},
-{img:"https://i.postimg.cc/bY3NnQyQ/S40303e4fb7b74bfa864d06fe4c82fa95h.webp", title:"Zip Up Fur Hoodie"},
-{img:"https://i.postimg.cc/MHVyHdR6/S1c8819e0662c47c3a5c9e203b3b61e2ey.webp", title:"Spider Print Hoodies"},
-{img:"https://i.postimg.cc/25Dqzh7V/S1f15f6619d754265a3427fc1e58c0307b.jpg", title:"Camouflage Sweatpants"},
-{img:"https://i.postimg.cc/c4nS1jHW/S250a3ce9c9034374bc1bcda5917b8cba-C.webp", title:"Baggy Denim Shorts"},
-{img:"https://i.postimg.cc/kM8ysFYL/Sbd248d9cc9294444ad35da58d633568d-Y.webp", title:"Women's T-shirt Brazil"},
-{img:"https://i.postimg.cc/G3YjKJgY/S8cf00d20588c4f7392c4bcb677d9773d-Z.webp", title:"Cross Wings Shirt"},
-{img:"https://i.postimg.cc/tJhtgpnK/Se1b01fe92ce74b1eaf420f950b0a73e9t.jpg", title:"Red Crystal Rings"},
-{img:"https://i.postimg.cc/prNJxprC/S40741af8c73b4921967495dddb200929a.jpg", title:"Baggy Jeans"},
-{img:"https://i.postimg.cc/SR0fqJRK/S0a4a171fe57b4eb193cbe08a0b810d7a-X.jpg", title:"Teeth Shirt"},
-{img:"https://i.postimg.cc/hjQ1H9DB/S601fd8b2ce70450cad84a03ad9cc95f5N.webp", title:"Women Shirt Oversize"},
-{img:"https://i.postimg.cc/R0DTsPBz/Sc02682d5917744138ef6c7db702221c8b.webp", title:"Vintage Short Sleeve T-Shirts"},
-{img:"https://i.postimg.cc/k5py1jdf/Sa63316f04c78411e9eaa133649b69b14R.webp", title:"45 MILES American football Shirt"},
-{img:"https://i.postimg.cc/nLP1Rdtq/S95bcadf87ed6499c9417be5275bc2e6ec.jpg", title:"Oversized Hoodie"},
-{img:"https://i.postimg.cc/q7RLxPWs/S796d0cc089ff4db5abf9b2cc59e20d83Z.webp", title:"Low Waist Jeans"},
-{img:"https://i.postimg.cc/Jhnq5fSm/S61134af898014a72aca0f479c8d328b1t.webp", title:"Y2k Aesthetic Crop Top"},
-{img:"https://i.postimg.cc/13MB6mCj/S9fd5ce32c2d14740992f8e990e2bccd8a.webp", title:"Oversized Teeth Graphic T Shirts"},
-{img:"https://i.postimg.cc/NjQb594N/S05a5111748524820b56d92cc893c2220A.jpg", title:"Oversized Hoodie Streetwear"},
-{img:"https://i.postimg.cc/4xXwm75K/Sf3341710a8404a858c51ac59c479d231g.webp", title:"Sleeveles Tank Top"},
-{img:"https://i.postimg.cc/MK7d6byf/S49921bff90184111b132c6839ac40ac4Y.jpg", title:"Striped Pants"},
-{img:"https://i.postimg.cc/28R0NXBY/S340ccc8e392647178029e178abb2bb85Z.jpg", title:"Graphic Crop Top"},
-{img:"https://i.postimg.cc/QxGfZnKm/Se4f2a3be95734cab817e3214d1941289Y.jpg", title:"Zircon Cross Pendant"},
-{img:"https://i.postimg.cc/dQT5XK3y/S163864e67bdb4820b8567008663acaa1S.jpg", title:"Cat Top"},
-{img:"https://i.postimg.cc/KjLQgtwn/S16e7c7b6b5134b1ebf8f3b40e16248fc-D.webp", title:"Women's High Waisted Jeans"},
-{img:"https://i.postimg.cc/nzN0z3R1/S31efda2302734a2483d0832d1f98e3f6t.webp", title:"One Piece Y2K Sunglasses"},
-{img:"https://i.postimg.cc/Hxr6dq2L/S1369397864ba462da3a35e2f4f73f6e9E.webp", title:"2000s Short Jacket"},
-{img:"https://i.postimg.cc/C1RcS34X/S39b2560d470e474fb4eaf453557a0fc8s.webp", title:"Cross Bikini"},
-{img:"https://i.postimg.cc/Gp7M0Lvy/Se37d267d11354ed28f14e0f039439b37E.webp", title:"Off Shoulder Shirt"},
-{img:"https://i.postimg.cc/R0VPb6J5/H1c3f3ed77bb149eb975474dd06ff6bad-B.webp", title:"Woman Sweatshirts Angel"},
-{img:"https://i.postimg.cc/SxGTr7sD/S895db7d9ddd349099d825e7d1a9a4867g.webp", title:"Pockets Camis Top"},
-{img:"https://i.postimg.cc/hPT3Jqqt/S101f29f2e19f4e0a8f9113c7ff5c680ba.webp", title:"New Logo Print Hoodies and Pants"},
-{img:"https://i.postimg.cc/R0yrzLBt/H432ff6ba08e24c77bc4a85b5a418e5a07.webp", title:"Angel Number Necklace"},
-{img:"https://i.postimg.cc/YShcVyTb/Sb328a32486414509b7944cd2f68b899cn-7b34585c-0963-47e8-885c-3fccf773a88f.webp", title:"Cargo Flared Jeans"},
-{img:"https://i.postimg.cc/3N0PR4K5/S1356c05e79b341d3bf6df70435625721j.webp", title:"Spider Print Tank Tops"},
-{img:"https://i.postimg.cc/ZY3m42nf/S7c69d890704c407da46f8bb4b8cb9c32X.webp", title:"Free Back Dress"},
-{img:"https://i.postimg.cc/sxFR59HC/Full-Size-Render.webp", title:"Straight Wide Leg Jeans"},
-{img:"https://i.postimg.cc/LXgpq0TT/S7ae382a651b841508ac3c25284bb68f1W.webp", title:"Long Dress"},
-{img:"https://i.postimg.cc/pd6vLtDr/Se05b4f1fb86b47d3a420edfca712f779O.jpg", title:"Hip Hop Sweatpants"},
-{img:"https://i.postimg.cc/PqxhHqvR/Scec96c1ea4b645e69710c9a408d30fcf-Q.webp", title:"Printed Black Jeans"},
-{img:"https://i.postimg.cc/yNdBKN3R/Sdf606488270c4cbf86698ffe71c8be6bo.webp", title:"Long-sleeve T-shirts Women"},
-{img:"https://i.postimg.cc/pLPR0CWX/S26892f873977400d803e836acf46cb00v.jpg", title:"Wide Leg Trousers"},
-{img:"https://i.postimg.cc/nc4nYgtG/Sf072f2a50b884a8f98a29e16b0b9ec19z.webp", title:"Y2K Sliver Color Earrings"},
-{img:"https://i.postimg.cc/HsDpMHF4/Sdb74b54150a440fc87760de323f3274c-V.webp", title:"Flared Jeans Denim"},
-{img:"https://i.postimg.cc/CMfhddrx/S6d1325d06f394254b7f396fffb15746a-T.webp", title:"Metal Red Top"},
-{img:"https://i.postimg.cc/3rD8WWSB/S834850b54584421cb5487021665d2ca8t.webp", title:"Skull Print Shirt"},
-{img:"https://i.postimg.cc/mDKT8Gk4/S7194d4abb48944a083152be05fd829a46.webp", title:"Slim Low Waist Sweatpants"},
-{img:"https://i.postimg.cc/XJrVfvV8/DC510453-EDC5-4185-BC78-F41942483CA5.webp", title:"Striped Yoga Top"},
-{img:"https://i.postimg.cc/d0HsZCKq/S53d2e2bc88d84e19a293887a355e1437J.webp", title:"Graphic Sweatpants"},
-{img:"https://i.postimg.cc/SKNQKr3T/Sda4db9fbda6244cea07336267ef9d447T-f94d1a12-1e71-4e8e-ba31-3c6e19f1edc8.jpg", title:"Wings Shorts"},
-{img:"https://i.postimg.cc/4x1NZMLn/S6080f6fc5f3f471bad30e92a4ac33a74S.webp", title:"Square Belt"},
-{img:"https://i.postimg.cc/0yv2Txfk/S8cf9ac07b3e04b299d65035fabc89234v.webp", title:"Black Mini Shorts"},
-{img:"https://i.postimg.cc/bwPN78R7/S31e5d80c0df74552be5a2dd397a9aa163.webp", title:"New Baggy Jeans"},
-{img:"https://i.postimg.cc/T3xYzGcc/S85e9176a76d84dfb9e085ad3557592cd4.webp", title:"Pink Crop Top"},
+{img:"https://i.postimg.cc/7Yr0pZNh/S16f93c1c06ef4afe9f3ae1a4413710b9U.jpg", title:"Low waist mini skirt", oldPrice:"$37.99", newPrice:"$2.49"},
+{img:"https://i.postimg.cc/mrfv9M3r/Sd1fd19b508b94aae81378b2ab770083ak.webp", title:"Y2k Mini Shorts", oldPrice:"$42.50", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/k4MWY1FJ/Sc11d75f7865943a1a4de70448c71fe27R.webp", title:"Long Sleeved Top", oldPrice:"$28.75", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/nLF2jYSC/S4400824974f647fbb78c1b4ce4c1cfd3a.webp", title:"Y2k Jeans High Wais", oldPrice:"$45.99", newPrice:"$2.99"},
+{img:"https://i.postimg.cc/fLjM2sjF/S0d40ccfb752348f8803813489eef347c-U.webp", title:"Street Baggy Jeans", oldPrice:"$33.25", newPrice:"$1.75"},
+{img:"https://i.postimg.cc/nVsmPDbR/S089735501c144d3186349b3a1ec97cfd-D-d1e4e9be-915e-4e9a-bb29-33eb23befe84.webp", title:"Y2K Bootcut Jeans", oldPrice:"$39.99", newPrice:"$3.50"},
+{img:"https://i.postimg.cc/HWwfy3BB/S35f1a0c543fa456faebe3bc56b535d82L.webp", title:"Baggy Jeans Wide Leg", oldPrice:"$47.50", newPrice:"$2.25"},
+{img:"https://i.postimg.cc/1tcJf7sn/S3d42585f01bd4a65bb66c778dbba2ad8Y-e893242e-1194-409c-8d6e-f199f6539a93.webp", title:"Loose Jeans", oldPrice:"$31.99", newPrice:"$1.49"},
+{img:"https://i.postimg.cc/QM929mK4/Sf5c187815fbc4c5bb85c7c8963d587cem.webp", title:"Hello Kitty Top", oldPrice:"$44.25", newPrice:"$3.75"},
+{img:"https://i.postimg.cc/JhkF4hSS/S547078c23a934d9ea18e990a29d53489r.webp", title:"Mouth T-shirt", oldPrice:"$36.50", newPrice:"$2.99"},
+{img:"https://i.postimg.cc/ZnKj3YD4/S8e2ddddb3c154fd88bd79df214017e834.jpg", title:"Y2K Striped Blouse", oldPrice:"$41.75", newPrice:"$1.25"},
+{img:"https://i.postimg.cc/nLF2jYSC/S4400824974f647fbb78c1b4ce4c1cfd3a.webp", title:"Y2k Jeans High Wais", oldPrice:"$29.99", newPrice:"$3.99"},
+{img:"https://i.postimg.cc/fLjM2sjF/S0d40ccfb752348f8803813489eef347c-U.webp", title:"Street Baggy Jeans", oldPrice:"$48.25", newPrice:"$2.50"},
+{img:"https://i.postimg.cc/nrXj6MRL/Sf89fbf1eba71405dba3c9d504c6b7e3dv.jpg", title:"Black Printed Shirt", oldPrice:"$34.99", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/9f86zSfG/S43ae8cf7bc9b42b993a6d7b8ec2d42163.webp", title:"Vintage Crop Top", oldPrice:"$43.50", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/nrWV7k1f/S6fc63414df824995b3a2f9c9207e20b00.jpg", title:"Military Jeans", oldPrice:"$38.75", newPrice:"$2.75"},
+{img:"https://i.postimg.cc/vHdGRcSV/S186058a8506b4700b55204850a1929a3L.webp", title:"Tube Tank Top", oldPrice:"$46.99", newPrice:"$1.50"},
+{img:"https://i.postimg.cc/NfMzVbfB/S7a3b51317c57451d909efb55a8b1135e-L.webp", title:"Y2K Long Sleeve Shirt", oldPrice:"$32.25", newPrice:"$3.49"},
+{img:"https://i.postimg.cc/3x659VXM/Scf1ee60e742e484fa3b7d19825803c38t.webp", title:"Flare Jeans", oldPrice:"$49.50", newPrice:"$2.99"},
+{img:"https://i.postimg.cc/HLYf3mNv/S88969b945b2a4d37976dc4b5a7c849b3b.webp", title:"White Denim Shorts", oldPrice:"$35.99", newPrice:"$1.75"},
+{img:"https://i.postimg.cc/tgMc9xSH/Sb9a499f99e834d78b3c2bb41e4baf83ag.webp", title:"British Shorts", oldPrice:"$42.75", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/y8rjRzFB/S7bedff514d1e4491b8e879d80ee435e2v.webp", title:"Low Waist Cargo", oldPrice:"$39.25", newPrice:"$2.49"},
+{img:"https://i.postimg.cc/CKGZgGMr/Se893cb4b943944f58ff4c8a1bb9c3f9cb.jpg", title:"Women Mini Skirt", oldPrice:"$47.99", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/k4Vg5W74/S205f452834724548b22385b7416023a54.webp", title:"Blue Jeans", oldPrice:"$33.50", newPrice:"$3.75"},
+{img:"https://i.postimg.cc/LXCvtYYc/S5872f28c913a40c7b28cca71b636e35eq.webp", title:"Cargo Pants", oldPrice:"$45.25", newPrice:"$2.25"},
+{img:"https://i.postimg.cc/fRNFTdxC/Sac9f27d8b1b847aeac8e8baf614e0bc1g.jpg", title:"Militar Hoodie", oldPrice:"$31.75", newPrice:"$1.25"},
+{img:"https://i.postimg.cc/DwnjKTTD/S5def22c0d95d451083361d8c94222b1bs.webp", title:"Women's Print Jeans", oldPrice:"$48.99", newPrice:"$3.50"},
+{img:"https://i.postimg.cc/h4V145pv/S707ee15bd5994dfe9d3d4bf7a450b721J.jpg", title:"07 Casual Set", oldPrice:"$36.25", newPrice:"$2.99"},
+{img:"https://i.postimg.cc/Dw0GGjdL/S804c5d3e9c4a42dc86ae4295b43a3ab0Q.webp", title:"Demon Jeans", oldPrice:"$44.50", newPrice:"$1.49"},
+{img:"https://i.postimg.cc/pTHysq8n/Se3e771bd656d4c20931cd997ed5ed135m-5afbef7b-91cb-49bb-a3a0-910cb61caeef.jpg", title:"Skeleton T Shirt", oldPrice:"$41.99", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/DyHvCx3Z/Sad89db6298144cc58bf12cd753071cff-H.webp", title:"2000s Tshirts", oldPrice:"$29.75", newPrice:"$2.50"},
+{img:"https://i.postimg.cc/528Vs1mk/Se3ce67a5fa9a47879d0dfce5653a4a47f.webp", title:"T-shirt Y2k Short Sleeve", oldPrice:"$47.25", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/c6qz3g2V/S15f9921da2344eec955935498eb33365n.webp", title:"Black Lace Top", oldPrice:"$34.99", newPrice:"$3.49"},
+{img:"https://i.postimg.cc/k429FSYK/Sc2a2425ab80e4308b5051d57403a0a8f8.webp", title:"Tupac Shirt", oldPrice:"$43.50", newPrice:"$2.75"},
+{img:"https://i.postimg.cc/QCLLQyTh/Se8d085099bf94488af1221d6c043edb2C.jpg", title:"New Baggy Wide Leg Jeans Men", oldPrice:"$38.25", newPrice:"$1.50"},
+{img:"https://i.postimg.cc/m2wqkDV6/Sc444dcac7dc7402db71e564fa8978d6f-F.webp", title:"Long Sleeves Top", oldPrice:"$46.99", newPrice:"$3.99"},
+{img:"https://i.postimg.cc/t4JrgzsV/Sddc4ec8b022a47ad8bcf64a65fc09329s.webp", title:"Spider Hoodie", oldPrice:"$32.75", newPrice:"$2.25"},
+{img:"https://i.postimg.cc/Zq3x9s45/Sc4b8f0febdf34a938c454f6a85b4c3b3K.webp", title:"Y2K Women Basic Crop Top", oldPrice:"$49.25", newPrice:"$1.75"},
+{img:"https://i.postimg.cc/fybdv8nG/S002edc23e05f434ea1e2baebf612759bn.webp", title:"Baggy Jeans Striped", oldPrice:"$35.50", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/hGq7YDRQ/S06d832d18e644c598379407123d2d11em.webp", title:"2000s Zip Up Top", oldPrice:"$42.99", newPrice:"$2.49"},
+{img:"https://i.postimg.cc/htVXTkQB/S1a423f7fbd3c44568b979ffe376d28694.webp", title:"Casual Set", oldPrice:"$39.75", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/1Xgtt2Zs/S020054ae77154b3b96b6e5234df1bea0H.jpg", title:"Y2K Star Rivet Belts", oldPrice:"$47.50", newPrice:"$3.50"},
+{img:"https://i.postimg.cc/zGM1DvGT/S116224ab906740cb9014d2b6a32a4948Q.jpg", title:"Black Printed T-shirt", oldPrice:"$33.25", newPrice:"$2.25"},
+{img:"https://i.postimg.cc/W4kcdVdf/S25cb081b432540af947267bf73216439v.webp", title:"Belt Double Hole", oldPrice:"$45.99", newPrice:"$1.25"},
+{img:"https://i.postimg.cc/qRcfGGX0/Sc1a8ce7b2a7444e7adf9c0bcf5b2c18b-E-d8df14ed-806d-415a-bdda-3c7831b9f232.webp", title:"Low-Waisted Flare Pants", oldPrice:"$31.50", newPrice:"$3.75"},
+{img:"https://i.postimg.cc/63VshhL0/Sf90dbb4396284d7688af6d532dc24688i.webp", title:"Hello Kitty hoodie", oldPrice:"$48.75", newPrice:"$2.99"},
+{img:"https://i.postimg.cc/4xrNLBtw/S6cc21fb5f2c5446e9b379150c8971f5a-K.jpg", title:"Trousers High Waist", oldPrice:"$36.99", newPrice:"$1.49"},
+{img:"https://i.postimg.cc/yNc6wcyY/Sefbc8518e9964f4c81e09a72dc700e5fu.jpg", title:"Flared Jeans", oldPrice:"$44.25", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/B63ZsbmN/S24271256fdba449e9298ffa48e10b1ac8.webp", title:"T-shirt Oversized", oldPrice:"$41.50", newPrice:"$2.50"},
+{img:"https://i.postimg.cc/zvXJbMZ5/S15c23d7add014454afaf0365b0b1b163Y.webp", title:"Print Baggy Jeans", oldPrice:"$29.75", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/5y7fw3bv/S7ca0fcc654814604be48de0733ba6a35i-03bb9a89-a466-4993-84f3-66e1498d107b.webp", title:"Floral Jeans", oldPrice:"$47.99", newPrice:"$3.49"},
+{img:"https://i.postimg.cc/gcNcFY8j/S2600e732e0bc41ce8cbb4edfc17a1f71l.webp", title:"2000s Low Rise Shorts", oldPrice:"$34.25", newPrice:"$2.75"},
+{img:"https://i.postimg.cc/k53qFD3j/S047573ada5264aa2bc2ff682366a82d1u.webp", title:"Spider Oversized Hoodie", oldPrice:"$43.50", newPrice:"$1.50"},
+{img:"https://i.postimg.cc/HxTmRKLc/S9aabac8971e4480aa53bef8dbc7f94a8p.webp", title:"Sweatpants Camouflage", oldPrice:"$38.99", newPrice:"$3.99"},
+{img:"https://i.postimg.cc/vBXysz1S/Sbd6f5eb3cacf47f6b25455bb25cab373d.webp", title:"Long Sleeves Crop Tope", oldPrice:"$46.25", newPrice:"$2.25"},
+{img:"https://i.postimg.cc/8c5SP6MJ/Sf2b5f05caf334478af6af63db62da9b2r.jpg", title:"Floreale Jeans", oldPrice:"$32.50", newPrice:"$1.75"},
+{img:"https://i.postimg.cc/vmg6q0Bx/S5eea20415c9a44218c35624621903b05h.webp", title:"Women's Black Jeans", oldPrice:"$49.75", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/q7P692hW/Sce0196ff8a794d158b8070c7567f3d315.webp", title:"Hello Kitty Belt", oldPrice:"$37.25", newPrice:"$2.49"},
+{img:"https://i.postimg.cc/1RcVjn9F/Sa031e5a2ea444e3eaa0b888075db51dcn.webp", title:"Knitting Cap", oldPrice:"$44.99", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/W1tDz50w/S8fe0b4b266cc4c138077bd88f88fca9dh.webp", title:"2000s Top", oldPrice:"$42.50", newPrice:"$3.50"},
+{img:"https://i.postimg.cc/13T8qDHs/S3690e1095a274c779c02b26fe6c324db-N.webp", title:"Plus Size Hoodie", oldPrice:"$30.25", newPrice:"$2.25"},
+{img:"https://i.postimg.cc/DzX8dmjs/S0b92c58bb17f4121bbd4b0c2c900e328Q.webp", title:"Cross Top", oldPrice:"$48.50", newPrice:"$1.25"},
+{img:"https://i.postimg.cc/SsbjZq3W/Scb395f78ef78472f8f2deef330a3a21b-D.webp", title:"Zircon Cross Pendant Necklace", oldPrice:"$35.75", newPrice:"$3.75"},
+{img:"https://i.postimg.cc/4dvyqqTx/Sa694c4f1efaa49bb9646d9c13b708ef03.jpg", title:"Leopard Tube Top", oldPrice:"$43.99", newPrice:"$2.99"},
+{img:"https://i.postimg.cc/90W0hbWG/Se1d87eb259504ece877f9839c85beaa0z-06d6d1bd-656f-4b70-904a-1e6e66296f05.webp", title:"2000s Vintage Jeans", oldPrice:"$41.25", newPrice:"$1.49"},
+{img:"https://i.postimg.cc/T29hcz9H/Sf3d5ba83b1ea4b32ad0a964dcbcce7c3V.jpg", title:"Printed T-shirts", oldPrice:"$39.50", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/4xKdsmT5/Se5e47ec6082240f1bf32b794c6e92aedh.webp", title:"Y2K Top", oldPrice:"$47.75", newPrice:"$2.50"},
+{img:"https://i.postimg.cc/L8qX2npR/S01d892b5241d4966b0514c954eba636b-R.jpg", title:"O-neck Long Sleeve Top", oldPrice:"$33.99", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/JhZzHv0j/S17c69da9605e4ace89f67fc94d5704efp.webp", title:"Red Lava Star Necklace", oldPrice:"$45.25", newPrice:"$3.49"},
+{img:"https://i.postimg.cc/mDSZ89Q2/S0ef1811f0351448cb5071cef0b5a7877V.webp", title:"Print Jeans", oldPrice:"$31.50", newPrice:"$2.75"},
+{img:"https://i.postimg.cc/SRNS5KrP/S0fbc929681ec4504ad79cce9bc3e7130g.webp", title:"Y2k Off shoulder Top", oldPrice:"$49.99", newPrice:"$1.50"},
+{img:"https://i.postimg.cc/bY3NnQyQ/S40303e4fb7b74bfa864d06fe4c82fa95h.webp", title:"Zip Up Fur Hoodie", oldPrice:"$38.25", newPrice:"$3.99"},
+{img:"https://i.postimg.cc/MHVyHdR6/S1c8819e0662c47c3a5c9e203b3b61e2ey.webp", title:"Spider Print Hoodies", oldPrice:"$46.50", newPrice:"$2.25"},
+{img:"https://i.postimg.cc/25Dqzh7V/S1f15f6619d754265a3427fc1e58c0307b.jpg", title:"Camouflage Sweatpants", oldPrice:"$42.75", newPrice:"$1.75"},
+{img:"https://i.postimg.cc/c4nS1jHW/S250a3ce9c9034374bc1bcda5917b8cba-C.webp", title:"Baggy Denim Shorts", oldPrice:"$29.99", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/kM8ysFYL/Sbd248d9cc9294444ad35da58d633568d-Y.webp", title:"Women's T-shirt Brazil", oldPrice:"$48.25", newPrice:"$2.49"},
+{img:"https://i.postimg.cc/G3YjKJgY/S8cf00d20588c4f7392c4bcb677d9773d-Z.webp", title:"Cross Wings Shirt", oldPrice:"$35.50", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/tJhtgpnK/Se1b01fe92ce74b1eaf420f950b0a73e9t.jpg", title:"Red Crystal Rings", oldPrice:"$43.99", newPrice:"$3.50"},
+{img:"https://i.postimg.cc/prNJxprC/S40741af8c73b4921967495dddb200929a.jpg", title:"Baggy Jeans", oldPrice:"$41.25", newPrice:"$2.25"},
+{img:"https://i.postimg.cc/SR0fqJRK/S0a4a171fe57b4eb193cbe08a0b810d7a-X.jpg", title:"Teeth Shirt", oldPrice:"$39.75", newPrice:"$1.25"},
+{img:"https://i.postimg.cc/hjQ1H9DB/S601fd8b2ce70450cad84a03ad9cc95f5N.webp", title:"Women Shirt Oversize", oldPrice:"$47.50", newPrice:"$3.75"},
+{img:"https://i.postimg.cc/R0DTsPBz/Sc02682d5917744138ef6c7db702221c8b.webp", title:"Vintage Short Sleeve T-Shirts", oldPrice:"$33.25", newPrice:"$2.99"},
+{img:"https://i.postimg.cc/k5py1jdf/Sa63316f04c78411e9eaa133649b69b14R.webp", title:"45 MILES American football Shirt", oldPrice:"$45.99", newPrice:"$1.49"},
+{img:"https://i.postimg.cc/nLP1Rdtq/S95bcadf87ed6499c9417be5275bc2e6ec.jpg", title:"Oversized Hoodie", oldPrice:"$32.50", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/q7RLxPWs/S796d0cc089ff4db5abf9b2cc59e20d83Z.webp", title:"Low Waist Jeans", oldPrice:"$49.75", newPrice:"$2.50"},
+{img:"https://i.postimg.cc/Jhnq5fSm/S61134af898014a72aca0f479c8d328b1t.webp", title:"Y2k Aesthetic Crop Top", oldPrice:"$38.99", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/13MB6mCj/S9fd5ce32c2d14740992f8e990e2bccd8a.webp", title:"Oversized Teeth Graphic T Shirts", oldPrice:"$46.25", newPrice:"$3.49"},
+{img:"https://i.postimg.cc/NjQb594N/S05a5111748524820b56d92cc893c2220A.jpg", title:"Oversized Hoodie Streetwear", oldPrice:"$42.50", newPrice:"$2.75"},
+{img:"https://i.postimg.cc/4xXwm75K/Sf3341710a8404a858c51ac59c479d231g.webp", title:"Sleeveles Tank Top", oldPrice:"$30.25", newPrice:"$1.50"},
+{img:"https://i.postimg.cc/MK7d6byf/S49921bff90184111b132c6839ac40ac4Y.jpg", title:"Striped Pants", oldPrice:"$48.99", newPrice:"$3.99"},
+{img:"https://i.postimg.cc/28R0NXBY/S340ccc8e392647178029e178abb2bb85Z.jpg", title:"Graphic Crop Top", oldPrice:"$36.75", newPrice:"$2.25"},
+{img:"https://i.postimg.cc/QxGfZnKm/Se4f2a3be95734cab817e3214d1941289Y.jpg", title:"Zircon Cross Pendant", oldPrice:"$44.25", newPrice:"$1.75"},
+{img:"https://i.postimg.cc/dQT5XK3y/S163864e67bdb4820b8567008663acaa1S.jpg", title:"Cat Top", oldPrice:"$41.99", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/KjLQgtwn/S16e7c7b6b5134b1ebf8f3b40e16248fc-D.webp", title:"Women's High Waisted Jeans", oldPrice:"$39.50", newPrice:"$2.49"},
+{img:"https://i.postimg.cc/nzN0z3R1/S31efda2302734a2483d0832d1f98e3f6t.webp", title:"One Piece Y2K Sunglasses", oldPrice:"$47.75", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/Hxr6dq2L/S1369397864ba462da3a35e2f4f73f6e9E.webp", title:"2000s Short Jacket", oldPrice:"$34.25", newPrice:"$3.50"},
+{img:"https://i.postimg.cc/C1RcS34X/S39b2560d470e474fb4eaf453557a0fc8s.webp", title:"Cross Bikini", oldPrice:"$45.50", newPrice:"$2.25"},
+{img:"https://i.postimg.cc/Gp7M0Lvy/Se37d267d11354ed28f14e0f039439b37E.webp", title:"Off Shoulder Shirt", oldPrice:"$32.99", newPrice:"$1.25"},
+{img:"https://i.postimg.cc/R0VPb6J5/H1c3f3ed77bb149eb975474dd06ff6bad-B.webp", title:"Woman Sweatshirts Angel", oldPrice:"$49.25", newPrice:"$3.75"},
+{img:"https://i.postimg.cc/SxGTr7sD/S895db7d9ddd349099d825e7d1a9a4867g.webp", title:"Pockets Camis Top", oldPrice:"$38.50", newPrice:"$2.99"},
+{img:"https://i.postimg.cc/hPT3Jqqt/S101f29f2e19f4e0a8f9113c7ff5c680ba.webp", title:"New Logo Print Hoodies and Pants", oldPrice:"$46.75", newPrice:"$1.49"},
+{img:"https://i.postimg.cc/R0yrzLBt/H432ff6ba08e24c77bc4a85b5a418e5a07.webp", title:"Angel Number Necklace", oldPrice:"$43.25", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/YShcVyTb/Sb328a32486414509b7944cd2f68b899cn-7b34585c-0963-47e8-885c-3fccf773a88f.webp", title:"Cargo Flared Jeans", oldPrice:"$31.50", newPrice:"$2.50"},
+{img:"https://i.postimg.cc/3N0PR4K5/S1356c05e79b341d3bf6df70435625721j.webp", title:"Spider Print Tank Tops", oldPrice:"$48.99", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/ZY3m42nf/S7c69d890704c407da46f8bb4b8cb9c32X.webp", title:"Free Back Dress", oldPrice:"$36.25", newPrice:"$3.49"},
+{img:"https://i.postimg.cc/sxFR59HC/Full-Size-Render.webp", title:"Straight Wide Leg Jeans", oldPrice:"$44.50", newPrice:"$2.75"},
+{img:"https://i.postimg.cc/LXgpq0TT/S7ae382a651b841508ac3c25284bb68f1W.webp", title:"Long Dress", oldPrice:"$42.75", newPrice:"$1.50"},
+{img:"https://i.postimg.cc/pd6vLtDr/Se05b4f1fb86b47d3a420edfca712f779O.jpg", title:"Hip Hop Sweatpants", oldPrice:"$40.25", newPrice:"$3.99"},
+{img:"https://i.postimg.cc/PqxhHqvR/Scec96c1ea4b645e69710c9a408d30fcf-Q.webp", title:"Printed Black Jeans", oldPrice:"$47.50", newPrice:"$2.25"},
+{img:"https://i.postimg.cc/yNdBKN3R/Sdf606488270c4cbf86698ffe71c8be6bo.webp", title:"Long-sleeve T-shirts Women", oldPrice:"$35.99", newPrice:"$1.75"},
+{img:"https://i.postimg.cc/pLPR0CWX/S26892f873977400d803e836acf46cb00v.jpg", title:"Wide Leg Trousers", oldPrice:"$43.25", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/nc4nYgtG/Sf072f2a50b884a8f98a29e16b0b9ec19z.webp", title:"Y2K Sliver Color Earrings", oldPrice:"$41.50", newPrice:"$2.49"},
+{img:"https://i.postimg.cc/HsDpMHF4/Sdb74b54150a440fc87760de323f3274c-V.webp", title:"Flared Jeans Denim", oldPrice:"$39.75", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/CMfhddrx/S6d1325d06f394254b7f396fffb15746a-T.webp", title:"Metal Red Top", oldPrice:"$48.25", newPrice:"$3.50"},
+{img:"https://i.postimg.cc/3rD8WWSB/S834850b54584421cb5487021665d2ca8t.webp", title:"Skull Print Shirt", oldPrice:"$34.50", newPrice:"$2.25"},
+{img:"https://i.postimg.cc/mDKT8Gk4/S7194d4abb48944a083152be05fd829a46.webp", title:"Slim Low Waist Sweatpants", oldPrice:"$45.99", newPrice:"$1.25"},
+{img:"https://i.postimg.cc/XJrVfvV8/DC510453-EDC5-4185-BC78-F41942483CA5.webp", title:"Striped Yoga Top", oldPrice:"$32.75", newPrice:"$3.75"},
+{img:"https://i.postimg.cc/d0HsZCKq/S53d2e2bc88d84e19a293887a355e1437J.webp", title:"Graphic Sweatpants", oldPrice:"$49.50", newPrice:"$2.99"},
+{img:"https://i.postimg.cc/SKNQKr3T/Sda4db9fbda6244cea07336267ef9d447T-f94d1a12-1e71-4e8e-ba31-3c6e19f1edc8.jpg", title:"Wings Shorts", oldPrice:"$38.99", newPrice:"$1.49"},
+{img:"https://i.postimg.cc/4x1NZMLn/S6080f6fc5f3f471bad30e92a4ac33a74S.webp", title:"Square Belt", oldPrice:"$46.25", newPrice:"$3.25"},
+{img:"https://i.postimg.cc/0yv2Txfk/S8cf9ac07b3e04b299d65035fabc89234v.webp", title:"Black Mini Shorts", oldPrice:"$43.50", newPrice:"$2.50"},
+{img:"https://i.postimg.cc/bwPN78R7/S31e5d80c0df74552be5a2dd397a9aa163.webp", title:"New Baggy Jeans", oldPrice:"$41.75", newPrice:"$1.99"},
+{img:"https://i.postimg.cc/T3xYzGcc/S85e9176a76d84dfb9e085ad3557592cd4.webp", title:"Pink Crop Top", oldPrice:"$39.25", newPrice:"$3.49"}
 
 
 
 
   ];
+  
+      let currentPage = 1;
+    const productsPerPage = 9; 
+    const container = document.getElementById("productContainer");
+    const pageInfo = document.getElementById("pageInfo");
 
-  let currentPage = 1;
-  const productsPerPage = 9; // show 9 products per page
-  const container = document.getElementById("productContainer");
-  const pageInfo = document.getElementById("pageInfo");
+    function renderPage(page) {
+      container.innerHTML = "";
+      const start = (page - 1) * productsPerPage;
+      const end = start + productsPerPage;
+      const pageProducts = products.slice(start, end);
 
-  function renderPage(page) {
-    container.innerHTML = "";
-    const start = (page-1) * productsPerPage;
-    const end = start + productsPerPage;
-    const pageProducts = products.slice(start, end);
+      pageProducts.forEach(p => {
+        const div = document.createElement("div");
+        div.classList.add("product");
+        div.innerHTML = `
+          <img src="${p.img}" alt="${p.title}">
+          <div class="product-info">
+            <h3>${p.title}</h3>
+            <div class="price">
+              <span class="old-price">${p.oldPrice}</span>
+              <span class="new-price">${p.newPrice}</span>
+            </div>
+            <button onclick="_JW()">Buy Now</button>
+          </div>
+        `;
+        container.appendChild(div);
+      });
 
-    pageProducts.forEach(p => {
-      const div = document.createElement("div");
-      div.classList.add("product");
-      div.innerHTML = `
-        <img src="${p.img}" alt="${p.title}" />
-        <div class="product-info">
-          <h3>${p.title}</h3>
-          <button onclick="_JW()">Buy Now</button>
-        </div>
-      `;
-      container.appendChild(div);
-    });
-
-    pageInfo.textContent = `Page ${currentPage}`;
-  }
-
-  function nextPage() {
-    const totalPages = Math.ceil(products.length / productsPerPage);
-    if(currentPage < totalPages) {
-      currentPage++;
-      renderPage(currentPage);
+      pageInfo.textContent = `Page ${currentPage}`;
     }
-  }
 
-  function prevPage() {
-    if(currentPage > 1) {
-      currentPage--;
-      renderPage(currentPage);
+    function nextPage() {
+      const totalPages = Math.ceil(products.length / productsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderPage(currentPage);
+      }
     }
-  }
 
-  // Initial render
-  renderPage(currentPage);
-</script>
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        renderPage(currentPage);
+      }
+    }
 
-<!-- Locker Script -->
-<script type="text/javascript">
-  var duRCH_tHw_NsVzUc = { "it": 3548104, "key": "36906" };
-</script>
-<script src="https://d1y0yks1k8t5m5.cloudfront.net/d011346.js"></script>
+    renderPage(currentPage);
+  </script>
 
-<script>
-  function redirectAfterOffer() {
-    window.location.href = "https://s.click.aliexpress.com/e/_EjQatUc";
-  }
-</script>
+  <!-- Locker Script -->
+  <script type="text/javascript">
+    var duRCH_tHw_NsVzUc = { "it": 3548104, "key": "36906" };
+  </script>
+  <script src="https://d1y0yks1k8t5m5.cloudfront.net/d011346.js"></script>
+
+  <script>
+    function redirectAfterOffer() {
+      window.location.href = "https://s.click.aliexpress.com/e/_EjQatUc";
+    }
+  </script>
 </body>
 </html>
